@@ -352,6 +352,23 @@
     [%pass /wait/(scot %da until) %arvo %b %wait until]
   (send-raw-card card)
 ::
+++  send-mass-request
+  =/  m  (strand ,~)
+  ^-  form:m
+  =/  =card:agent:gall
+    [%pass /heft %arvo %d %flog %heft ~]
+  (send-raw-card card)
+::
+++  take-mass  ::  WIP
+  =/  m  (strand ,(unit))
+  ^-  form:m
+  |=  tin=strand-input:strand
+  ?+  in.tin  `[%skip ~]
+      ~  `[%wait ~]
+      [~ %sign [%heft ~] %dill %mass *]
+    `[%done p.sign-arvo.u.in.tin]
+  ==
+::
 ++  map-err
   |*  computation-result=mold
   =/  m  (strand ,computation-result)
