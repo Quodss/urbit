@@ -101,6 +101,7 @@
           %pack  (dump kyz)
           %crop  (dump trim+p.kyz)
           %verb  (pass /verb %$ kyz)
+          %mass  (done kyz)  ::  forward [%mass (unit)] from arvo to eye.all; will all handle new gift?
         ::
             %seat
           %^  pass  /seat  %g
