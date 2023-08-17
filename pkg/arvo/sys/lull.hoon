@@ -1961,7 +1961,7 @@
         [%pack ~]                                       ::  compact memory
         [%trim p=@ud]                                   ::  trim kernel state
         [%logs =told]                                   ::  system output
-        [%mass p=(unit)]  ::  WIP
+        [%mass p=(unit)]                                ::  WIP, gift with mass report to all viewers
     ==                                                  ::
   +$  task                                              ::  in request ->$
     $~  [%vega ~]                                       ::
@@ -1971,7 +1971,7 @@
         [%heft ~]                                       ::  memory report
         $>(%init vane-task)                             ::  after gall ready
         [%logs p=(unit ~)]                              ::  watch system output
-        [%mass p=(unit)]  ::  WIP
+        [%mass p=(unit)]                                ::  WIP, task from arvo to forward p to viewers
         [%meld ~]                                       ::  unify memory
         [%pack ~]                                       ::  compact memory
         [%seat =desk]                                   ::  install desk
