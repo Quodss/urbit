@@ -49,18 +49,22 @@
           ==                                            ::
           $:  %k                                        ::    to self
               $>(%fard task)                            ::  internal thread
-      ==  ==                                            ::
+          ==
+          $:  %$
+              $>(%whey waif)
+      ==  ==
     +$  sign                                            ::    in response $<-
       $%  $:  %gall                                     ::    from %gall
               $>(%unto gift:gall)                       ::  update
           ==                                            ::
           $:  %khan                                     ::    from self
-              $>(?(%arow %avow) gift)                   ::  thread result
+              $>(?(%arow %avow %quac) gift)             ::  thread result
       ==  ==                                            ::
     +$  khan-state                                      ::
-      $:  %0                                            ::    state v0
+      $:  %1                                            ::    state v1
           hey=duct                                      ::  unix duct
           tic=@ud                                       ::  tid counter
+          mass-duct=(unit duct)
       ==                                                ::
     --                                                  ::
 =>
@@ -132,10 +136,17 @@
     ~|(%khan-call-dud (mean tang.u.dud))
   ?+    -.task  [~ khan-gate]
       %born
-    [~ khan-gate(hey hen, tic 0)]
+    ?~  mass-duct
+      ~&  "mass-duct empty"
+      [~ khan-gate(hey hen, tic 0)]
+    ~&  ["mass-duct filled" u.mass-duct]
+    :_  khan-gate(hey hen, tic 0, mass-duct ~)
+    :_  ~
+    [u.mass-duct %give %quac ~]
   ::
       %fard  (bard hen 'khan-fyrd--' bear.p.task %| [name args]:p.task)
       %lard  (bard hen 'khan-lard--' bear.task %& shed.task)
+  ::
       %fyrd
     =*  fyd         p.task
     =/  =beak       (get-beak bear.fyd now)
@@ -145,7 +156,25 @@
       (slap (vale.dais q.q.args.fyd) !,(*hoon [~ u=.]))
     =-  [[hen %pass wire -]~ khan-gate]
     [%k %fard bear.fyd name.fyd p.q.args.fyd vase]
+  ::
+    %heft  (heft hen)
+    %quac  (quac task)
   ==
+::
+++  heft
+  |=  hen=duct
+  ^-  [(list move) _khan-gate]
+  :_  khan-gate(mass-duct `hen)
+  :_  ~
+  [hen %pass /whey %$ whey/~]
+::
+++  quac
+  |=  git=gift
+  ^-  [(list move) _khan-gate]
+  ?~  mass-duct  `khan-gate
+  :_  khan-gate(mass-duct ~)
+  :_  ~
+  [u.mass-duct %give git]
 ::
 ++  bard
   |=  [hen=duct prefix=@ta =bear payload=(each shed [name=term args=cage])]
@@ -163,12 +192,27 @@
       (poke-spider hen cage)
   ==
 ::
++$  khan-states  $%(khan-state-0 khan-state)
+::
++$  khan-state-0                                     ::
+  $:  %0                                            ::    state v0
+      hey=duct                                      ::  unix duct
+      tic=@ud                                       ::  tid counter
+  ==
+::
+++  state-0-to-1
+  |=  old=khan-state-0
+  ^-  khan-state
+  [%1 hey tic ~]:old
 ::  +load: migrate an old state to a new khan version
 ::
 ++  load
-  |=  old=khan-state
+  |=  old=khan-states
   ^+  khan-gate
-  khan-gate(state old)
+  ?-  -.old
+    %1  khan-gate(state old)
+    %0  $(old (state-0-to-1 old))
+  ==
 ::  +scry: nothing to see as yet
 ::
 ++  scry

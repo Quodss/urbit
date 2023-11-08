@@ -3054,6 +3054,7 @@
   +$  gift                                              ::  out result <-$
     $%  [%arow p=(avow cage)]                           ::  in-arvo result
         [%avow p=(avow page)]                           ::  external result
+        [%quac p=(unit)]
     ==                                                  ::
   +$  task                                              ::  in request ->$
     $~  [%vega ~]                                       ::
@@ -3066,6 +3067,8 @@
         [%lard =bear =shed]                             ::  inline thread
         $>(%trim vane-task)                             ::  trim state
         $>(%vega vane-task)                             ::  report upgrade
+        [%quac p=(unit)]
+        [%heft ~]
     ==                                                  ::
   ::                                                    ::
   ++  avow  |$  [a]  (each a goof)                      ::  $fyrd result
