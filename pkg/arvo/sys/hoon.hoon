@@ -5233,7 +5233,7 @@
     |=(a=tape (rap 3 ^-((list @) a)))
   ;~(plug low (star ;~(pose nud low hep)))
 ::
-++  mixed-case-symbol
+++  mys
   %+  cook
     |=(a=tape (rap 3 ^-((list @) a)))
   ;~(plug alf (star alp))
@@ -11944,10 +11944,10 @@
         |=  [a=@tas b=(unit @tas)]
         ?~(b a [a u.b])
       ;~  plug
-        mixed-case-symbol
+        mys
         ;~  pose
           %+  stag  ~
-            ;~(pfix cab mixed-case-symbol)
+            ;~(pfix cab mys)
           (easy ~)
         ==
       ==
